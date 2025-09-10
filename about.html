@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page { position:relative; z-index:1; max-width:860px; margin:96px auto; padding:0 16px; }
+    .card-prose {
+      background: var(--card); border:1px solid #ffffff22; border-radius:20px;
+      backdrop-filter: blur(8px); padding:28px; color:var(--text); line-height:1.7;
+    }
+    .headline { display:flex; align-items:center; gap:12px; margin:0 0 12px }
+    .headline h1 { margin:0; font-size:clamp(32px,4vw,48px) }
+    .muted { color:var(--muted) }
+    .back { display:inline-block; margin-bottom:14px; padding:8px 12px; border-radius:10px;
+      background:#ffffff14; border:1px solid #ffffff22; color:var(--text); text-decoration:none; }
+    .back:hover{ background:#ffffff24 }
+    .prose p{ margin:12px 0 }
+  </style>
+</head>
+<body>
+  <div id="sky" aria-hidden="true"></div>
+
+  <div class="page">
+    <a class="back" href="index.html">← home</a>
+    <div class="card-prose prose">
+      <div class="headline">
+        <h1>About Me</h1>
+        <span class="muted">hi, i’m william 🤠</span>
+      </div>
+
+      <p>howdy 🤠 i’m william, a 2nd year software engineering student and occasional assignment victim. i’m an intp so i spend a lot of time lost in thought, jumping between random ideas, and getting way too deep into stuff most people wouldn’t care about.</p>
+
+      <p>i like a lot of different things. coding and ai keep me curious, math keeps me challenged, and video games keep me sane. i’m also into anime and shows that have dark themes and characters who aren’t simply good or bad. outside of screens i hit the gym, trying to fix the skinny fat struggle, and i’ve been getting more into fashion so i can actually look put together.</p>
+
+      <p>i tutor too, mostly math, which is fun when my students actually get it and a bit humbling when they clown me. i think it makes me better at explaining and also forces me to keep learning.</p>
+
+      <p>this website is basically my little space to show who i am, what i enjoy, and what i’ve been working on. if you stick around you’ll probably end up knowing more about me than some of the people i see every day.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
