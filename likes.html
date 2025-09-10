@@ -16,11 +16,19 @@
     .box{border-radius:18px;border:1px solid #ffffff22;background:var(--card);backdrop-filter:blur(8px);padding:16px;transition:transform .15s, background .2s}
     .box:hover{transform:translateY(-2px);background:var(--card-hover)}
     .title{margin:0 0 10px;font-weight:700}
+
+    /* Bigger frame + force full image containment */
     .frame{
       position:relative;border-radius:16px;overflow:hidden;background:#0f0b2e;
-      aspect-ratio:16/9; height:clamp(260px,30vw,420px); display:grid; place-items:center;
+      aspect-ratio:16/9;height:clamp(280px,32vw,480px);display:grid;place-items:center;
     }
-    .frame img{width:100%;height:100%;object-fit:contain}
+    .frame img{
+      width:100%;height:100%;
+      object-fit:contain !important;     /* stop cropping */
+      object-position:center center !important;
+      background:#0f0b2e;                /* letterbox color */
+      display:block;
+    }
     .hint{margin-top:10px;color:var(--muted);font-size:12px}
   </style>
 </head>
@@ -36,21 +44,24 @@
 
     <section class="gals">
       <!-- TV / Anime -->
-      <div class="box gallery" data-images="assets/invincible.png,assets/office.png">
+      <div class="box gallery"
+           data-images="assets/invincible.png,assets/aot.png,assets/hxh.png,assets/brba.png,assets/office.png">
         <p class="title">anime / tv shows</p>
         <div class="frame"><img alt="tv & anime"></div>
         <p class="hint">tap/click to cycle</p>
       </div>
 
       <!-- Video Games -->
-      <div class="box gallery" data-images="assets/tesv.png,assets/gta.png,assets/pokemon.png,assets/r6.png,assets/mc.png">
+      <div class="box gallery"
+           data-images="assets/tesv.png,assets/gta.png,assets/pokemon.png,assets/r6.png,assets/mc.png">
         <p class="title">video games</p>
         <div class="frame"><img alt="games"></div>
         <p class="hint">tap/click to cycle</p>
       </div>
 
       <!-- Movies -->
-      <div class="box gallery" data-images="assets/yourname.png,assets/toystory.png,assets/parasite.png,assets/spiderman.png">
+      <div class="box gallery"
+           data-images="assets/yourname.png,assets/toystory.png,assets/parasite.png,assets/spiderman.png,assets/frozen.png">
         <p class="title">movies</p>
         <div class="frame"><img alt="movies"></div>
         <p class="hint">tap/click to cycle</p>
@@ -62,9 +73,7 @@
   <script>
     document.querySelectorAll('.gallery').forEach(box=>{
       const list = box.dataset.images.split(',').map(s=>s.trim()).filter(Boolean);
-      let i = 0;
-      const img = box.querySelector('img');
-      img.src = list[i];
+      let i = 0; const img = box.querySelector('img'); img.src = list[i];
       box.addEventListener('click', ()=>{ i = (i+1) % list.length; img.src = list[i]; });
     });
   </script>
