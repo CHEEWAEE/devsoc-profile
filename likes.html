@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Things I Like • Boss</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page{position:relative;z-index:1;max-width:1100px;margin:96px auto;padding:0 16px}
+    .back{display:inline-block;margin-bottom:14px;padding:8px 12px;border-radius:10px;background:#ffffff14;border:1px solid #ffffff22;color:#fff;text-decoration:none}
+    .back:hover{background:#ffffff24}
+    .intro{color:var(--muted);margin:10px 0 22px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .box{
+      background:var(--card);border:1px solid #ffffff22;border-radius:18px;backdrop-filter:blur(8px);
+      padding:14px;display:flex;flex-direction:column;gap:10px;cursor:pointer;user-select:none
+    }
+    .box h2{margin:2px 4px 0;font-size:18px;color:#eae6ff;font-weight:700}
+    .wrap{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:#1a1238}
+    .wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .15s}
+    .hint{color:var(--muted);font-size:12px;margin:0 4px 4px}
+  </style>
+</head>
+<body>
+  <div id="sky" aria-hidden="true"></div>
+
+  <div class="page">
+    <a class="back" href="index.html">← home</a>
+    <h1>things i like</h1>
+    <p class="intro">heres some of the things i like i know alot of this may seem random and unrelated but i just like certain things and im not sure why lol, do we have anything in common? 👀</p>
+
+    <section class="grid">
+      <div class="box" id="animeBox" aria-label="anime and tv shows">
+        <h2>anime / tv shows</h2>
+        <div class="wrap"><img id="animeImg" src="assets/invincible.png" alt="anime & tv"></div>
+        <p class="hint">tap/click to cycle</p>
+      </div>
+
+      <div class="box" id="gamesBox" aria-label="video games">
+        <h2>video games</h2>
+        <div class="wrap"><img id="gamesImg" src="assets/mc.png" alt="video games"></div>
+        <p class="hint">tap/click to cycle</p>
+      </div>
+
+      <div class="box" id="moviesBox" aria-label="movies">
+        <h2>movies</h2>
+        <div class="wrap"><img id="moviesImg" src="assets/yourname.png" alt="movies"></div>
+        <p class="hint">tap/click to cycle</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const anime = ["assets/invincible.png","assets/hxh.png","assets/brba.png","assets/office.png","assets/aot.png"];
+    const games = ["assets/mc.png","assets/gta.png","assets/tesv.png","assets/r6.png","assets/pokemon.png"];
+    const movies= ["assets/yourname.png","assets/parasite.png","assets/toystory.png","assets/spiderman.png","assets/frozen.png"];
+
+    function cycler(el, list){
+      let i = 0;
+      el.addEventListener('click', () => {
+        i = (i+1) % list.length;
+        const img = el.querySelector('img');
+        img.style.opacity = .2;
+        setTimeout(()=>{ img.src = list[i]; img.style.opacity = 1; }, 100);
+      });
+    }
+
+    cycler(document.getElementById('animeBox'), anime);
+    cycler(document.getElementById('gamesBox'), games);
+    cycler(document.getElementById('moviesBox'), movies);
+  </script>
+</body>
+</html>
