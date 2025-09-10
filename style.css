@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+:root{
+  --bg1:#0b0b2b; --bg2:#2a1260; --bg3:#3e1580;
+  --card:#ffffff1a; --card-hover:#ffffff2b; --text:#e9e7ff; --muted:#bfb7ff;
+  --accent:#a88bff; --radius:16px;
+}
+html,body{height:100%}
+body{
+  margin:0; color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 50% -10%, #5a33c2 0%, transparent 60%),
+              linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+}
+
+/* floating sprites layer */
+#sky{position:fixed; inset:0; pointer-events:none; z-index:0}
+.sprite{
+  position:absolute; width:160px; opacity:.9; animation:bob 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 14px rgba(171,132,255,.35));
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media (prefers-reduced-motion: reduce){ .sprite{animation:none} }
+
+/* content */
+.hero{position:relative; z-index:1; text-align:center; padding:96px 16px 12px}
+.hero h1{font-size: clamp(40px,6vw,76px); margin:0 0 6px}
+.hero p{margin:0; color:var(--muted)}
+
+.cards{
+  position:relative; z-index:1;
+  max-width:980px; margin:36px auto 80px; padding:0 16px;
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px;
+}
+.card{
+  display:grid; place-items:center; height:120px; border-radius:var(--radius);
+  background:var(--card); color:var(--text); text-decoration:none; font-weight:600;
+  backdrop-filter: blur(8px); transition:background .2s, transform .2s;
+  border:1px solid #ffffff22;
+}
+.card:hover{background:var(--card-hover); transform: translateY(-2px);}
+
+/* socials */
+.socials{position:relative; z-index:1; display:flex; justify-content:center; padding:40px 16px 56px}
+.social-box{
+  display:flex; gap:18px; align-items:center; padding:14px 18px; border-radius:20px;
+  background:var(--card); border:1px solid #ffffff22; backdrop-filter: blur(8px);
+}
+.social img{width:28px; height:28px; display:block}
+.social{position:relative}
+.discord::after{
+  content: attr(data-user);
+  position:absolute; left:50%; bottom:120%; transform:translateX(-50%);
+  background:#1f153a; color:#dcd6ff; font-size:12px; padding:6px 8px; border-radius:10px;
+  border:1px solid #ffffff22; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .15s;
+}
+.discord:hover::after{opacity:1;}
