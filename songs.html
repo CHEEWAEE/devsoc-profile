@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>favourite songs</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- speed up Spotify -->
+  <link rel="preconnect" href="https://open.spotify.com">
+  <link rel="preconnect" href="https://i.scdn.co">
+  <link rel="dns-prefetch" href="https://open.spotify.com">
+  <link rel="dns-prefetch" href="https://i.scdn.co">
+  <style>
+    .page{position:relative;z-index:1;max-width:900px;margin:72px auto;padding:0 16px}
+    .back{display:inline-block;margin-bottom:14px;padding:8px 12px;border-radius:10px;background:#ffffff14;border:1px solid #ffffff22;color:var(--text);text-decoration:none}
+    .back:hover{background:#ffffff24}
+    .headline h1{margin:0 0 8px;font-size:clamp(32px,4vw,48px)}
+    .headline p{margin:0;color:var(--muted)}
+
+    /* player card */
+    .box{border-radius:18px;border:1px solid #ffffff22;background:var(--card);
+         backdrop-filter:blur(8px);padding:16px;transition:transform .15s, background .2s}
+    .box:hover{transform:translateY(-2px);background:var(--card-hover)}
+    .player{border-radius:12px;overflow:hidden}
+    .actions{display:flex;gap:12px;margin-top:12px}
+    .actions a{color:#9cf;text-decoration:none;font-weight:600}
+    .actions a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <!-- same sky bg as your other pages -->
+  <div id="sky" aria-hidden="true"></div>
+
+  <div class="page">
+    <a class="back" href="index.html">← home</a>
+    <div class="headline">
+      <h1>favourite songs</h1>
+      <p>my current loop. play/pause/skip right here 🎧</p>
+    </div>
+
+    <section class="box">
+      <div class="player">
+        <!-- your embed goes here -->
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/1qVklXkO3z5jt5BnKPnEa5?utm_source=generator"
+          width="100%" height="352" frameborder="0" loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
+      </div>
+
+      <div class="actions">
+        <a href="https://open.spotify.com/playlist/1qVklXkO3z5jt5BnKPnEa5" target="_blank" rel="noopener">
+          open in spotify
+        </a>
+        <a href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Spotify help">
+          having trouble? open the app
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
