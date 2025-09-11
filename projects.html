@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page{position:relative;z-index:1;max-width:1200px;margin:72px auto;padding:0 16px}
+    .back{display:inline-block;margin-bottom:14px;padding:8px 12px;border-radius:10px;background:#ffffff14;border:1px solid #ffffff22;color:var(--text);text-decoration:none}
+    .back:hover{background:#ffffff24}
+    .headline h1{margin:0 0 8px;font-size:clamp(32px,4vw,48px)}
+    .headline p{margin:0;color:var(--muted)}
+
+    .projects{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));margin-top:24px}
+    .proj{border-radius:18px;border:1px solid #ffffff22;background:var(--card);backdrop-filter:blur(8px);padding:20px;transition:transform .15s, background .2s}
+    .proj:hover{transform:translateY(-2px);background:var(--card-hover)}
+    .proj h2{margin-top:0;font-size:20px}
+    .proj p{color:var(--muted);margin:10px 0 14px}
+    .proj a{color:#9cf;text-decoration:none;font-weight:600}
+    .proj a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <div id="sky" aria-hidden="true"></div>
+
+  <div class="page">
+    <a class="back" href="index.html">← home</a>
+    <div class="headline">
+      <h1>projects</h1>
+      <p>a few things i’ve built (and learned a lot from)</p>
+    </div>
+
+    <section class="projects">
+      <!-- Take System -->
+      <div class="proj">
+        <h2><a href="https://github.com/CHEEWAEE/take-system" target="_blank">Take System</a></h2>
+        <p>A Bash-based assignment submission, testing, and marking system.  
+        Built for COMP2041 at UNSW, it taught me about automation, shell scripting, and handling real workflows.</p>
+      </div>
+
+      <!-- PageRank -->
+      <div class="proj">
+        <h2><a href="https://github.com/CHEEWAEE/pagerank-system" target="_blank">PageRank System</a></h2>
+        <p>A C-based search engine that ranks URLs using keyword relevance and the PageRank algorithm.  
+        Developed for COMP2521, it gave me hands-on experience with data structures, algorithms, and efficiency.</p>
+      </div>
+
+      <!-- This Website -->
+      <div class="proj">
+        <h2><a href="index.html">This Website</a></h2>
+        <p>You’re looking at it right now!  
+        I designed and built this site from scratch, experimenting with HTML, CSS, and JS while making it personal and aesthetic.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
