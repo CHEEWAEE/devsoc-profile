@@ -17,27 +17,26 @@
     .box:hover{transform:translateY(-2px);background:var(--card-hover)}
     .title{margin:0 0 10px;font-weight:700}
 
-    /* Bigger frame + force full image containment */
-.frame {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #0f0b2e;
-  display: flex;               /* use flex instead of grid */
-  align-items: center;
-  justify-content: center;
-  height: 300px;               /* set a max height for consistency */
-}
-
-.frame img {
-  max-width: 100%;             /* never exceed frame width */
-  max-height: 100%;            /* never exceed frame height */
-  width: auto;                 /* preserve proportions */
-  height: auto;
-  object-fit: contain;         /* keep full image visible */
-  object-position: center;
-  display: block;
-}
+  .frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f0b2e;
+    display: flex;             
+    align-items: center;
+    justify-content: center;
+    height: 300px;             
+  }
+  
+  .frame img {
+    max-width: 100%;            
+    max-height: 100%;            
+    width: auto;                
+    height: auto;
+    object-fit: contain;        
+    object-position: center;
+    display: block;
+  }
 
     .hint{margin-top:10px;color:var(--muted);font-size:12px}
   </style>
@@ -52,23 +51,18 @@
     </div>
 
     <section class="gals">
-      <!-- TV / Anime -->
       <div class="box gallery"
            data-images="assets/invincible.png,assets/aot.png,assets/hxh.png,assets/brba.png,assets/office.png">
         <p class="title">anime / tv shows</p>
         <div class="frame"><img alt="tv & anime"></div>
         <p class="hint">tap/click to cycle</p>
       </div>
-
-      <!-- Video Games -->
       <div class="box gallery"
            data-images="assets/tesv.png,assets/gta.png,assets/pokemon.png,assets/r6.png,assets/mc.png">
         <p class="title">video games</p>
         <div class="frame"><img alt="games"></div>
         <p class="hint">tap/click to cycle</p>
       </div>
-
-      <!-- Movies -->
       <div class="box gallery"
            data-images="assets/yourname.png,assets/toystory.png,assets/parasite.png,assets/spiderman.png,assets/frozen.png">
         <p class="title">movies</p>
