@@ -11,7 +11,6 @@ body{
               linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg3));
 }
 
-/* floating sprites layer */
 #sky{position:fixed; inset:0; pointer-events:none; z-index:0}
 .sprite{
   position:absolute; width:160px; opacity:.9; animation:bob 4.5s ease-in-out infinite;
@@ -20,7 +19,6 @@ body{
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @media (prefers-reduced-motion: reduce){ .sprite{animation:none} }
 
-/* content */
 .hero{position:relative; z-index:1; text-align:center; padding:96px 16px 12px}
 .hero h1{font-size: clamp(40px,6vw,76px); margin:0 0 6px}
 .hero p{margin:0; color:var(--muted)}
@@ -38,7 +36,6 @@ body{
 }
 .card:hover{background:var(--card-hover); transform: translateY(-2px);}
 
-/* socials */
 .socials{position:relative; z-index:1; display:flex; justify-content:center; padding:40px 16px 56px}
 .social-box{
   display:flex; gap:18px; align-items:center; padding:14px 18px; border-radius:20px;
